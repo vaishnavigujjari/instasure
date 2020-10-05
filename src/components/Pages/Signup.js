@@ -5,22 +5,7 @@ import Footer from "../../components/Footer/Footer";
 export default function SignUp() {
   return (
     <>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <Footer />
+      <h1>SignUp page</h1>
     </>
   );
 }
