@@ -6,6 +6,8 @@ import Home from "./components/Pages/Home";
 import Services from "./components/Pages/Services";
 import Products from "./components/Pages/Products";
 import SignUp from "./components/Pages/Signup";
+import Slider from "./components/Slider/Slider";
+import Links from "./components/Links/Links";
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
         <NavBar />
         <Switch>
           <Route path="/" exact component={Home} />
+          <Route path="/slider" component={Slider} />
+          <Route path="/links" component={Links} />
           <Route path="/services" component={Services} />
           <Route path="/products" component={Products} />
           <Route path="/signup" component={SignUp} />
