@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "url": "https://reactjs.org/",
+        "type": "Learnings",
+        "name": "React",
+        "description": "You can learn React.js here",
+        "image": "https://cdn.auth0.com/blog/react-js/react.png"
+    },
+    {
+        "id": 2,
+        "url": "https://golang.org/",
+        "type": "Learnings",
+        "name": "Golang",
+        "description": "You can learn Golang here",
+        "image": "https://r00t4bl3.com/uploads/pp-840x830-pad-1000x1000-f8f8f8-c3edd4cbfc0d7bc9d7b02b27c6f6bac5.jpg"
+    },
+    {
+        "id": 3,
+        "url": "https://www.php.net/",
+        "type": "Leanings",
+        "name": "PHP",
+        "description": "You can learn PHP here",
+        "image": "https://ih1.redbubble.net/image.495516789.9717/pp,840x830-pad,1000x1000,f8f8f8.u2.jpg"
+    },
+    {
+        "id": 4,
+        "url": "https://www.docker.com/",
+        "type": "Leanings",
+        "name": "Docker",
+        "description": "You can learn Docker here",
+        "image": "https://florencefennel.co.in/image/cache/catalog/florencefennel/Docker-1000x1000.jpg"
+    },
+    {
+        "id": 5,
+        "url": "https://swagger.io/",
+        "type": "Leanings",
+        "name": "Swagger",
+        "description": "You can learn Swagger here",
+        "image": "https://koenig-media.raywenderlich.com/uploads/2019/02/OpenAPI-feature.png"
+    },
+    {
+        "id": 6,
+        "url": "https://www.postman.com/",
+        "type": "Leanings",
+        "name": "Postman",
+        "description": "You can learn Postman here",
+        "image": "https://mms.businesswire.com/media/20200206005191/en/728482/23/pm-logo-vert.jpg"
+    }
+    
+]

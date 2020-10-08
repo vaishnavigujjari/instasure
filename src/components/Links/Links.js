@@ -20,6 +20,9 @@ import {
   LinksCardFeature,
 } from "./Links.elements";
 
+import links from './links.json';
+import Image from 'react-bootstrap/Image'
+
 function Links() {
   return (
     <IconContext.Provider value={{ color: "#a9b3c1", size: 64 }}>
@@ -27,7 +30,24 @@ function Links() {
         <LinksWrapper>
           <LinksHeading>Links</LinksHeading>
           <LinksContainer>
-            <LinksCard to="/sign-up">
+
+            {
+              links.map(link => (
+                <LinksCard onClick={() => {window.open(link.url, '_blank');}}>
+                  <LinksCardInfo>
+                    <LinksCardIcon>
+                      <center><Image src={link.image} thumbnail/></center>
+                    </LinksCardIcon>
+                    <LinksCardFeatures>
+                      <LinksCardFeature>{link.name}</LinksCardFeature>
+                    </LinksCardFeatures>
+                  </LinksCardInfo>
+                </LinksCard>
+              ))
+            }
+
+
+            {/* <LinksCard to="/sign-up">
               <LinksCardInfo>
                 <LinksCardIcon>
                   <GiRock />
@@ -74,7 +94,6 @@ function Links() {
                 <Button primary>Learn more</Button>
               </LinksCardInfo>
             </LinksCard>
-
             <LinksCard to="/sign-up">
               <LinksCardInfo>
                 <LinksCardIcon>
@@ -107,18 +126,7 @@ function Links() {
                 </LinksCardFeatures>
                 <Button primary>Learn more</Button>
               </LinksCardInfo>
-            </LinksCard>
-            <LinksCard to="/sign-up">
-              <LinksCardInfo>
-                <LinksCardIcon>
-                  <GiRock />
-                </LinksCardIcon>
-                <LinksCardFeatures>
-                  <LinksCardFeature>Retargeting analytics</LinksCardFeature>
-                </LinksCardFeatures>
-                <Button primary>Learn more</Button>
-              </LinksCardInfo>
-            </LinksCard>
+            </LinksCard> */}
           </LinksContainer>
         </LinksWrapper>
       </LinksSection>

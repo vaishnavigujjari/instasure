@@ -1,0 +1,25 @@
+[ {
+    "id": 17,
+    "date": "2020-07-11",
+    "location": "Mecca Masjid",
+    "locationURL": "https://www.google.com/maps/d/u/0/viewer?msa=0&mid=1no4tePW4V_nqYYGRTI59GpHoKq4&ll=21.42251500000001%2C39.826201&z=17",
+    "image": "https://www.hyderabadtourism.travel/images/visiting-places/headers/mecca-masjid-hyderabad-tourism-entry-fee-timings-holidays-reviews-header.jpg" ,
+    "description": "Lets have fun at Mecca Masjid"
+},
+{
+    "id": 18,
+    "date": "2020-09-20",
+    "location": "Hussain Sagar",
+    "locationURL": "https://www.google.com/maps/place/Hussain+Sagar/@17.4241047,78.457007,14z/data=!3m1!4b1!4m5!3m4!1s0x3bcb97558c2e9b6b:0x25705363cc844e9d!8m2!3d17.4238798!4d78.4738215",
+    "image": "https://img.traveltriangle.com/blog/wp-content/uploads/2020/01/cover-image-of-Places-To-Visit-In-Summer-In-Hyderabad_7th-jan.jpg",
+    "description": "Lets have fun at Hussain Sagar"
+},
+{
+    "id": 19,
+    "date": "2020-05-21",
+    "location": "Charminar",
+    "locationURL": "https://www.google.com/maps?ll=17.36163,78.47467&q=17.36163,78.47467&hl=en&t=m&z=15",
+    "image": "https://www.holidify.com/images/bgImages/HYDERABAD.jpg",
+    "description": "Lets have fun at Charminar"
+}]
+
