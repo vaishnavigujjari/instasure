@@ -29,8 +29,8 @@ function Navbar() {
     <>
       <nav className="navbar">
         <div className="navbar-container">
-          <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-            <img src={Logo} class="responsive" />
+          <Link to="/" className="navbar-left" onClick={closeMobileMenu}>
+            <img src={Logo} class="responsive" width="27px" />
             {/* <img src="nature.jpg" alt="Nature" class="responsive"> */}
 
             {/* <i class="fab fa-typo3" /> */}
