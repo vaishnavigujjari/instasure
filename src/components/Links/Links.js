@@ -25,7 +25,7 @@ function Links() {
     <IconContext.Provider value={{ color: "#a9b3c1", size: 64 }}>
       <LinksSection>
         <LinksWrapper>
-          <LinksHeading>Our Services</LinksHeading>
+          <LinksHeading>Links</LinksHeading>
           <LinksContainer>
             <LinksCard to="/sign-up">
               <LinksCardInfo>
