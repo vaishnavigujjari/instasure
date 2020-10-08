@@ -30,7 +30,7 @@ function Navbar() {
       <nav className="navbar">
         <div className="navbar-container">
           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-            <img src={Logo} class="responsive"/>
+            <img src={Logo} class="responsive" />
             {/* <img src="nature.jpg" alt="Nature" class="responsive"> */}
 
             {/* <i class="fab fa-typo3" /> */}

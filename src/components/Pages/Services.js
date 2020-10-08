@@ -1,8 +1,8 @@
 import React from "react";
 import "../../App.css";
-import Footer from "../../components/Footer/Footer";
+import Footer from "../Footer/Footer";
 
-export default function Services() {
+export default function Products() {
   return (
     <>
       <br />
