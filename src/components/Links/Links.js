@@ -74,63 +74,6 @@ function Links() {
                 <Button primary>Learn more</Button>
               </LinksCardInfo>
             </LinksCard>
-
-            <LinksCard to="/sign-up">
-              <LinksCardInfo>
-                <LinksCardIcon>
-                  <GiRock />
-                </LinksCardIcon>
-                <LinksCardFeatures>
-                  <LinksCardFeature>Retargeting analytics</LinksCardFeature>
-                </LinksCardFeatures>
-                <Button primary>Learn more</Button>
-              </LinksCardInfo>
-            </LinksCard>
-
-            <LinksCard to="/sign-up">
-              <LinksCardInfo>
-                <LinksCardIcon>
-                  <GiRock />
-                </LinksCardIcon>
-                <LinksCardFeatures>
-                  <LinksCardFeature>Retargeting analytics</LinksCardFeature>
-                </LinksCardFeatures>
-                <Button primary>Learn more</Button>
-              </LinksCardInfo>
-            </LinksCard>
-            <LinksCard to="/sign-up">
-              <LinksCardInfo>
-                <LinksCardIcon>
-                  <GiRock />
-                </LinksCardIcon>
-                <LinksCardFeatures>
-                  <LinksCardFeature>Retargeting analytics</LinksCardFeature>
-                </LinksCardFeatures>
-                <Button primary>Learn more</Button>
-              </LinksCardInfo>
-            </LinksCard>
-            <LinksCard to="/sign-up">
-              <LinksCardInfo>
-                <LinksCardIcon>
-                  <GiRock />
-                </LinksCardIcon>
-                <LinksCardFeatures>
-                  <LinksCardFeature>Retargeting analytics</LinksCardFeature>
-                </LinksCardFeatures>
-                <Button primary>Learn more</Button>
-              </LinksCardInfo>
-            </LinksCard>
-            <LinksCard to="/sign-up">
-              <LinksCardInfo>
-                <LinksCardIcon>
-                  <GiRock />
-                </LinksCardIcon>
-                <LinksCardFeatures>
-                  <LinksCardFeature>Retargeting analytics</LinksCardFeature>
-                </LinksCardFeatures>
-                <Button primary>Learn more</Button>
-              </LinksCardInfo>
-            </LinksCard>
             <LinksCard to="/sign-up">
               <LinksCardInfo>
                 <LinksCardIcon>

@@ -33,8 +33,10 @@ export const LinksContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0 50px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+
+  grid-template-columns: auto auto auto auto;
   grid-gap: 16px;
 
   @media screen and (max-width: 960px) {
@@ -52,9 +54,8 @@ export const LinksCard = styled(Link)`
   width: 280px;
   height: 300px;
   text-decoration: none;
-  border-radius: 4px;
 
-  &:nth-child(2) {
+  &:nth-child() {
     margin: 24px;
   }
 
