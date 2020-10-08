@@ -6,7 +6,7 @@ import Home from "./components/Pages/Home";
 import Products from "./components/Pages/Products";
 import Services from "./components/Pages/Services";
 import SignUp from "./components/Pages/Signup";
-import Links from "./components/Links/index";
+import Links from "./components/Links/Links";
 
 function App() {
   return (

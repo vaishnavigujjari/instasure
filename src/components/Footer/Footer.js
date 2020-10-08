@@ -1,98 +1,110 @@
 import React from "react";
-import "./Footer.css";
 import { Button } from "../../components/Button";
-import { Link } from "react-router-dom";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaYoutube,
+  FaTwitter,
+  FaLinkedin,
+} from "react-icons/fa";
+import {
+  FooterContainer,
+  FooterSubscription,
+  FooterSubText,
+  FooterSubHeading,
+  Form,
+  FormInput,
+  FooterLinksContainer,
+  FooterLinksWrapper,
+  FooterLinkItems,
+  FooterLinkTitle,
+  FooterLink,
+  SocialMedia,
+  SocialMediaWrap,
+  SocialLogo,
+  SocialIcon,
+  WebsiteRights,
+  SocialIcons,
+  SocialIconLink,
+} from "./Footer.elements";
 
 function Footer() {
   return (
-    <div className="footer-container">
-      <div class="footer-links">
-        <div className="footer-link-wrapper">
-          <div class="footer-link-items">
-            <h2>Products</h2>
-            <Link to="/">Lifetime Acquire</Link>
-            <Link to="/">Lifetime Service</Link>
-            <Link to="/">Lifetime Engage</Link>
-          </div>
-          <div class="footer-link-items">
-            <h2>About Us</h2>
-            <Link to="/sign-up">About</Link>
-            <Link to="/">Events</Link>
-            <Link to="/">Press</Link>
-            <Link to="/">Careers</Link>
-            <Link to="/">Team</Link>
-          </div>
-        </div>
-        <div className="footer-link-wrapper">
-          <div class="footer-link-items">
-            <h2>Social Media</h2>
-            <Link to="/">LinkedIn</Link>
-            <Link to="/">Instagram</Link>
-            <Link to="/">Facebook</Link>
-            <Link to="/">Youtube</Link>
-            <Link to="/">Twitter</Link>
-          </div>
-          <div class="footer-link-items">
-            <h2>Resources</h2>
-            <Link to="/">Resources</Link>
-            <Link to="/">People</Link>
-            <Link to="/">FAQ</Link>
-          </div>
-        </div>
-      </div>
-      <section class="social-media">
-        <div class="social-media-wrap">
-          <div class="footer-logo">
-            <Link to="/" className="social-logo">
-              Sureify
-              {/* <i class="fab fa-typo3" /> */}
-            </Link>
-          </div>
-          <div class="social-icons">
-            <Link
-              class="social-icon-link facebook"
-              to="/"
-              target="_blank"
-              aria-label="Facebook"
-            >
-              <i class="fab fa-facebook-f" />
-            </Link>
-            <Link
-              class="social-icon-link instagram"
-              to="/"
-              target="_blank"
-              aria-label="Instagram"
-            >
-              <i class="fab fa-instagram" />
-            </Link>
-            <Link
-              class="social-icon-link youtube"
-              to="/"
+    <FooterContainer>
+      <FooterSubscription>
+        <FooterSubHeading>
+          Join our exclusive membership to receive the latest news and trends
+        </FooterSubHeading>
+        <FooterSubText>You can unsubscribe at any time.</FooterSubText>
+        <Form>
+          <FormInput name="email" type="email" placeholder="Your Email" />
+          <Button fontBig>Subscribe</Button>
+        </Form>
+      </FooterSubscription>
+      <FooterLinksContainer>
+        <FooterLinksWrapper>
+          <FooterLinkItems>
+            <FooterLinkTitle>Products</FooterLinkTitle>
+            <FooterLink to="/">Lifetime Acquire</FooterLink>
+            <FooterLink to="/">Lifetime Service</FooterLink>
+            <FooterLink to="/">Lifetime Engage</FooterLink>
+          </FooterLinkItems>
+          <FooterLinkItems>
+            <FooterLinkTitle>About Us</FooterLinkTitle>
+            <FooterLink to="/">About</FooterLink>
+            <FooterLink to="/">Events</FooterLink>
+            <FooterLink to="/">Press</FooterLink>
+            <FooterLink to="/">Careers</FooterLink>
+            <FooterLink to="/">Team</FooterLink>
+          </FooterLinkItems>
+        </FooterLinksWrapper>
+        <FooterLinksWrapper>
+          <FooterLinkItems>
+            <FooterLinkTitle>Social Media</FooterLinkTitle>
+            <FooterLink to="/">LinkedIn</FooterLink>
+            <FooterLink to="/">Instagram</FooterLink>
+            <FooterLink to="/">Facebook</FooterLink>
+            <FooterLink to="/">Youtube</FooterLink>
+            <FooterLink to="/">Twitter</FooterLink>
+          </FooterLinkItems>
+          <FooterLinkItems>
+            <FooterLinkTitle>Resources</FooterLinkTitle>
+            <FooterLink to="/">Resources</FooterLink>
+            <FooterLink to="/">People</FooterLink>
+            <FooterLink to="/">FAQ</FooterLink>
+          </FooterLinkItems>
+        </FooterLinksWrapper>
+      </FooterLinksContainer>
+      <SocialMedia>
+        <SocialMediaWrap>
+          <SocialLogo to="/">
+            <SocialIcon />
+            Sureify
+          </SocialLogo>
+          <SocialIcons>
+            <SocialIconLink href="/" target="_blank" aria-label="Facebook">
+              <FaFacebook />
+            </SocialIconLink>
+            <SocialIconLink href="/" target="_blank" aria-label="Instagram">
+              <FaInstagram />
+            </SocialIconLink>
+            <SocialIconLink
+              rel="noopener noreferrer"
               target="_blank"
               aria-label="Youtube"
             >
-              <i class="fab fa-youtube" />
-            </Link>
-            <Link
-              class="social-icon-link twitter"
-              to="/"
-              target="_blank"
-              aria-label="Twitter"
-            >
-              <i class="fab fa-twitter" />
-            </Link>
-            <Link
-              class="social-icon-link twitter"
-              to="/"
-              target="_blank"
-              aria-label="LinkedIn"
-            >
-              <i class="fab fa-linkedin" />
-            </Link>
-          </div>
-        </div>
-      </section>
-    </div>
+              <FaYoutube />
+            </SocialIconLink>
+            <SocialIconLink href="/" target="_blank" aria-label="Twitter">
+              <FaTwitter />
+            </SocialIconLink>
+            <SocialIconLink href="/" target="_blank" aria-label="LinkedIn">
+              <FaLinkedin />
+            </SocialIconLink>
+          </SocialIcons>
+        </SocialMediaWrap>
+      </SocialMedia>
+    </FooterContainer>
   );
 }
 
