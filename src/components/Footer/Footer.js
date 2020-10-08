@@ -31,16 +31,6 @@ import {
 function Footer() {
   return (
     <FooterContainer>
-      <FooterSubscription>
-        <FooterSubHeading>
-          Join our exclusive membership to receive the latest news and trends
-        </FooterSubHeading>
-        <FooterSubText>You can unsubscribe at any time.</FooterSubText>
-        <Form>
-          <FormInput name="email" type="email" placeholder="Your Email" />
-          <Button fontBig>Subscribe</Button>
-        </Form>
-      </FooterSubscription>
       <FooterLinksContainer>
         <FooterLinksWrapper>
           <FooterLinkItems>
@@ -77,10 +67,7 @@ function Footer() {
       </FooterLinksContainer>
       <SocialMedia>
         <SocialMediaWrap>
-          <SocialLogo to="/">
-            <SocialIcon />
-            Sureify
-          </SocialLogo>
+          <SocialLogo to="/">Sureify</SocialLogo>
           <SocialIcons>
             <SocialIconLink href="/" target="_blank" aria-label="Facebook">
               <FaFacebook />
@@ -88,11 +75,7 @@ function Footer() {
             <SocialIconLink href="/" target="_blank" aria-label="Instagram">
               <FaInstagram />
             </SocialIconLink>
-            <SocialIconLink
-              rel="noopener noreferrer"
-              target="_blank"
-              aria-label="Youtube"
-            >
+            <SocialIconLink href="/" target="_blank" aria-label="Youtube">
               <FaYoutube />
             </SocialIconLink>
             <SocialIconLink href="/" target="_blank" aria-label="Twitter">
