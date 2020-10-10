@@ -36,7 +36,7 @@ function Links() {
                 <LinksCard onClick={() => {window.open(link.url, '_blank');}}>
                   <LinksCardInfo>
                     <LinksCardIcon>
-                      <center><Image src={link.image} thumbnail/></center>
+                      <GiRock />
                     </LinksCardIcon>
                     <LinksCardFeatures>
                       <LinksCardFeature>{link.name}</LinksCardFeature>
