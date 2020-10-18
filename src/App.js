@@ -7,10 +7,13 @@ import Products from "./components/Pages/Products";
 import Services from "./components/Pages/Services";
 import SignUp from "./components/Pages/Signup";
 import Links from "./components/Links/Links";
+import { Provider } from 'react-redux';
+import store from './redux/store';
+
 
 function App() {
   return (
-    <>
+    <Provider store={store}>
       <Router>
         <NavBar />
         <Switch>
@@ -21,7 +24,7 @@ function App() {
           <Route path="/signup" component={SignUp} />
         </Switch>
       </Router>
-    </>
+    </Provider>
   );
 }
 
