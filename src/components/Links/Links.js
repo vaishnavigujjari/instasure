@@ -6,6 +6,7 @@ import { GiCutDiamond, GiRock } from "react-icons/gi";
 import { GiFloatingCrystal } from "react-icons/gi";
 import { IconContext } from "react-icons/lib";
 import { Container, Row, Col, Modal, Form, Button, Nav, NavDropdown } from 'react-bootstrap';
+import axios from 'axios';
 // import { Container } from './Container';
 import {
   LinksSection,
@@ -22,12 +23,12 @@ import {
   LinksCardFeature,
 } from "./Links.elements";
 
-import links from './links.json';
+// import links from './links.json';
 
   export const Links = (props) => {
     const [show, setShow] = useState(false);
     const [fetchData, isFetchingData] = useState(false);
-    const links  = [];
+    const [links, setLinks] = useState([]);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const [dateCreate, setDateCreate] = useState("");
@@ -37,9 +38,19 @@ import links from './links.json';
     const [imageCreate, setImageCreate] = useState("");
 
 
-    const componentDidMount = () =>{
-      
-    }
+
+    useEffect(() => {
+      axios.get('http://localhost:8080/companyEvents')
+      .then(
+        res =>{
+          console.log(res.data)
+          setLinks(res.data.data)
+        }
+      )
+      .catch(err =>{
+        console.log(err)
+      })
+  }, [])
 
 
     const addCompanyEvent = () =>{
@@ -68,6 +79,7 @@ import links from './links.json';
           })
     
     handleClose()
+    window.location.reload(false);
 
     }
 
@@ -134,13 +146,13 @@ import links from './links.json';
           <LinksContainer>
             {
               links.map(link => (
-                <LinksCard onClick={() => {window.open(link.url, '_blank');}}>
+                <LinksCard onClick={() => {window.open(link.image, '_blank');}}>
                   <LinksCardInfo>
                     <LinksCardIcon>
                       <GiRock />
                     </LinksCardIcon>
                     <LinksCardFeatures>
-                      <LinksCardFeature>{link.name}</LinksCardFeature>
+                      <LinksCardFeature>{link.location}</LinksCardFeature>
                     </LinksCardFeatures>
                   </LinksCardInfo>
                 </LinksCard>
