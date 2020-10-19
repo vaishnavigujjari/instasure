@@ -59,20 +59,31 @@ import temp from './companyEvents.json';
 import Carousel from 'react-bootstrap/Carousel';
 import Moment from 'react-moment';
 
-const Slider = (props) => {
+import { connect } from 'react-redux';
+import { fetchEvents} from '../../redux/company_events/eventActions';
 
-  const [companyEvents, setCompanyEvents] = useState([]);
+
+// const Slider = (props) => {
+  function Slider({eventData, fetchEvents}) {
+  // const [companyEvents, setCompanyEvents] = useState([]);
   
   useEffect(() => {
-    setCompanyEvents(temp); 
+    // setCompanyEvents(temp); 
+    fetchEvents()
   }, []);
+  console.log(eventData)
 
 
+return eventData.loading ? (
+  <h2>Loading</h2>
+) : eventData.error ? (
+  <h2>{eventData.error}</h2>
+) : (
     
-return (
+// return (
     <Container>
     <Carousel>
-            {companyEvents.map((item) => (
+            {eventData.events.map((item) => (
                 <Carousel.Item  onClick={()=> {window.open(item.locationURL);}}>
                     <img
                     height="300"
@@ -97,4 +108,22 @@ return (
 );
 }
 
-export default Slider
+
+const mapStateToProps = state => {
+  return {
+      eventData: state.event
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+      fetchEvents: () => dispatch(fetchEvents())
+      // addLink : (obj) => dispatch(addLink(obj)) 
+  }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Slider)
+
+
+// export default Slider

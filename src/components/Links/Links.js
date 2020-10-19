@@ -7,7 +7,7 @@ import { IconContext } from "react-icons/lib";
 
 import React, {useState,useEffect}from 'react';
 import { connect } from 'react-redux';
-import { fetchLinks,addLink } from '../../redux';
+import { fetchLinks,addLink } from '../../redux/links/linkActions';
 
 
 import {
@@ -39,6 +39,8 @@ function Links({linkData, fetchLinks,addLink}) {
   const [typeCreate, setTypeCreate] = useState("");
   const [imageCreate, setImageCreate] = useState("");
   const [DescriptionCreate, setDescriptionCreate] = useState("");
+
+
   useEffect(() => {
     fetchLinks()
 }, [])
