@@ -8,7 +8,7 @@ import { IconContext } from "react-icons/lib";
 import React, {useState,useEffect}from 'react';
 import { connect } from 'react-redux';
 import { fetchLinks,addLink } from '../../redux';
-
+import {Dropdown} from 'react-bootstrap';
 
 import {
   LinksSection,
@@ -39,10 +39,13 @@ function Links({linkData, fetchLinks,addLink}) {
   const [typeCreate, setTypeCreate] = useState("");
   const [imageCreate, setImageCreate] = useState("");
   const [DescriptionCreate, setDescriptionCreate] = useState("");
+
+  const [linkType, setLinkType] = useState("");
+
   useEffect(() => {
     fetchLinks()
 }, [])
-console.log(linkData)
+// console.log(linkData)
 
 return linkData.loading ? (
   <h2>Loading</h2>
@@ -56,7 +59,19 @@ return linkData.loading ? (
       <LinksSection>
         <LinksWrapper>
           <LinksHeading>Links</LinksHeading>
-          <center><Button variant="success" onClick={() => {handleShow()}}>Add Item</Button></center>
+          <center><Button variant="success" onClick={() => {handleShow()}}>Add Link</Button></center>
+          <br/>
+          <Dropdown>
+            <Dropdown.Toggle variant="success" id="dropdown-basic">
+              Type
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item onSelect={() => {setLinkType("");fetchLinks()}} >All</Dropdown.Item>
+              <Dropdown.Item onClick={() => {setLinkType("HR");fetchLinks("HR")}}>HR</Dropdown.Item>
+              <Dropdown.Item onClick={() => {setLinkType("Learning");fetchLinks("Learning")}}>Learning</Dropdown.Item>
+              <Dropdown.Item onClick={() => {setLinkType("Payroll");fetchLinks("Payroll")}}>Payroll</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
           <br />
           <LinksContainer>
 
@@ -65,10 +80,10 @@ return linkData.loading ? (
                 <LinksCard onClick={() => {window.open(link.url, '_blank');}}>
                   <LinksCardInfo>
                     <LinksCardIcon>
-                      <GiRock />
+                    <center><Image src={link.image} width="150" height="150" thumbnail/></center>
                     </LinksCardIcon>
                     <LinksCardFeatures>
-                      <LinksCardFeature>{link.url}</LinksCardFeature>
+                      <LinksCardFeature>{link.description}</LinksCardFeature>
                     </LinksCardFeatures>
                   </LinksCardInfo>
                 </LinksCard>
@@ -127,7 +142,7 @@ return linkData.loading ? (
           "image": imageCreate,
         };
 
-        addLink(obj);
+        addLink(obj, linkType);
         handleClose()}}>
         Save Changes
       </Button>
@@ -149,8 +164,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-      fetchLinks: () => dispatch(fetchLinks()),
-      addLink : (obj) => dispatch(addLink(obj)) 
+      fetchLinks: (type) => dispatch(fetchLinks(type)),
+      addLink : (obj, linkType) => dispatch(addLink(obj, linkType)) 
   }
 }
 

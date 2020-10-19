@@ -36,19 +36,23 @@ export const addLinkFailure = error => {
     }
 }
 
-export const addLinkSuccess = links => {
+export const addLinkSuccess = (links, linkType) => {
     return {
         type: ADD_LINK_SUCCESS,
-        payload: links
+        payload: {
+            links,
+            linkType
+        }
     }
 }
 
 
 
-export const fetchLinks = () => {
+export const fetchLinks = (type = "") => {
     return (dispatch) => {
         dispatch(fetchLinksRequest)
-        axios.get('http://localhost:8000/link')
+        console.log(type)
+        axios.get(`http://localhost:8000/link?type=${type}`)
             .then(response => {
                 const links = response.data.data
                 console.log(links)
@@ -61,7 +65,7 @@ export const fetchLinks = () => {
     }
 }
 
-export const addLink = (obj) => {
+export const addLink = (obj, linkType) => {
     return (dispatch) => {
         dispatch(addLinkRequest)
         //axios.get('http://localhost:8000/link')
@@ -74,7 +78,7 @@ export const addLink = (obj) => {
             .then(data => {
                 const links = data.data
                 console.log(links)
-                dispatch(addLinkSuccess(links))
+                dispatch(addLinkSuccess(links, linkType))
             })
             .catch(error => {
                 const errorMsg = error.message

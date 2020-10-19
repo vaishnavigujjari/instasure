@@ -33,7 +33,7 @@ const reducer = (state = initialState, action) => {
         case ADD_LINK_SUCCESS:
                 return {
                     loading: false,
-                    links: [...state.links, action.payload],
+                    links: [...state.links, action.payload.links].filter(link => (link.type === action.payload.linkType)),
                     error: ''
                 }
         case ADD_LINK_FAILURE:
