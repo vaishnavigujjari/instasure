@@ -50,12 +50,14 @@ return linkData.loading ? (
   <h2>{linkData.error}</h2>
 ) : (
   <>
-  <center><Button variant="success" onClick={() => {handleShow()}}>Add Item</Button></center>
+  
 
   <IconContext.Provider value={{ color: "#a9b3c1", size: 64 }}>
       <LinksSection>
         <LinksWrapper>
           <LinksHeading>Links</LinksHeading>
+          <center><Button variant="success" onClick={() => {handleShow()}}>Add Item</Button></center>
+          <br />
           <LinksContainer>
 
             {
