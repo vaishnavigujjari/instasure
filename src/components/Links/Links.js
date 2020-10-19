@@ -63,7 +63,7 @@ return linkData.loading ? (
           <br/>
           <Dropdown>
             <Dropdown.Toggle variant="success" id="dropdown-basic">
-              Type
+              {linkType !== "" ? linkType : "All" }
             </Dropdown.Toggle>
             <Dropdown.Menu>
               <Dropdown.Item onSelect={() => {setLinkType("");fetchLinks()}} >All</Dropdown.Item>
