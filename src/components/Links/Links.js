@@ -21,32 +21,60 @@ import {
   LinksCardFeatures,
   LinksCardFeature,
 } from "./Links.elements";
+
 import links from './links.json';
-//
+
   export const Links = (props) => {
     const [show, setShow] = useState(false);
+    const [fetchData, isFetchingData] = useState(false);
+    const links  = [];
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const [idCreate, setIdCreate] = useState(0);
-    const [urlCreate, setUrlCreate] = useState("");
-    const [typeCreate, setTypeCreate] = useState("");
-    const [nameCreate, setNameCreate] = useState("");
+    const [dateCreate, setDateCreate] = useState("");
+    const [locationCreate, setLocationCreate] = useState("");
+    const [locationURLCreate, setlocationURLCreate] = useState("");
     const [descriptionCreate, setDescriptionCreate] = useState("");
     const [imageCreate, setImageCreate] = useState("");
-    // Api call
-    useEffect(() => {
-      fetch('http://localhost:3002/')
+
+
+    const componentDidMount = () =>{
+      
+    }
+
+
+    const addCompanyEvent = () =>{
+      let obj = {
+        "date": dateCreate,
+        "Location" : locationCreate,
+        "locationURL" : locationURLCreate,
+        "description": descriptionCreate,
+        "image": imageCreate
+      };
+      const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(obj)
+
+    };
+      fetch('http://localhost:8080/companyEvents',requestOptions)
           .then(response => response.json())
           .then((data) => {
-            setIdCreate(data.id);
-            setUrlCreate(data.url);
-            setTypeCreate(data.type);
-            setNameCreate(data.name);
-            setDescriptionCreate(data.description);
-            setImageCreate(data.image);
-            // console.log(data);
+            // setDateCreate(data.date);
+            // setLocationCreate(data.type);
+            // setlocationURLCreate(data.name);
+            // setDescriptionCreate(data.description);
+            // setImageCreate(data.image);
+            console.log(data);
           })
-        })
+    
+    handleClose()
+
+    }
+
+
+
+
+
   return (
     <React.Fragment>
       <br/>
@@ -61,55 +89,44 @@ import links from './links.json';
         <Modal.Body>
           <Form>
             <Form.Group controlId="formBasicText">
-              <Form.Label>Id</Form.Label>
-                <Form.Control required type="text" placeholder="Enter Unique Id"
-                      onChange={(e) => {setIdCreate(e.target.value)}} />
+              <Form.Label>Date</Form.Label>
+                <Form.Control type="date" placeholder="Enter Date"
+                      onChange={(e) => {setDateCreate(e.target.value)}} />
             </Form.Group>
             <Form.Group controlId="formBasicText">
-              <Form.Label>Url</Form.Label>
-                <Form.Control type="url" placeholder="Enter url"
-                      onChange={(e) => {setUrlCreate(e.target.value)}} />
-            </Form.Group>
-            <Form.Group controlId="formBasicText">
-              <Form.Label>Type</Form.Label>
+              <Form.Label>Location</Form.Label>
                 <Form.Control type="text" placeholder="Enter Type"
-                      onChange={(e) => {setTypeCreate(e.target.value)}} />
+                      onChange={(e) => {setLocationCreate(e.target.value)}} />
             </Form.Group>
             <Form.Group controlId="formBasicText">
-              <Form.Label>Name</Form.Label>
-                <Form.Control type="text" placeholder="Enter Name"
-                      onChange={(e) => {setNameCreate(e.target.value)}} />
+              <Form.Label>Location URL</Form.Label>
+                <Form.Control type="text" placeholder="Enter Loaction URL"
+                      onChange={(e) => {setlocationURLCreate(e.target.value)}} />
             </Form.Group>
+            <Form.Group controlId="formBasicText">
+              <Form.Label>Image</Form.Label>
+                <Form.Control type="url" placeholder="Enter image_url"
+                      onChange={(e) => {setImageCreate(e.target.value)}} />
+            </Form.Group>
+            
             <Form.Group controlId="formBasicTextArea">
               <Form.Label>Description</Form.Label>
                 <Form.Control type="textarea" placeholder="Enter Description"
                       onChange={(e) => {setDescriptionCreate(e.target.value)}} />
             </Form.Group>
-            <Form.Group controlId="formBasicText">
-              <Form.Label>Image_Url</Form.Label>
-                <Form.Control type="url" placeholder="Enter image_url"
-                      onChange={(e) => {setImageCreate(e.target.value)}} />
-            </Form.Group>
+            
           </Form>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>Close</Button>
-          <Button variant="primary" onClick={() => {
-              let obj = {
-                "id": Number(idCreate),
-                "url": urlCreate,
-                "type": typeCreate,
-                "name": nameCreate,
-                "description": descriptionCreate,
-                "image": imageCreate
-              };
-            // createItem(obj)
-            alert("Item created   "+JSON.stringify(obj));
-            handleClose()}}>
+          <Button variant="primary" onClick= {addCompanyEvent}>
             Add Data
           </Button>
         </Modal.Footer>
       </Modal>
+
+
+
       <IconContext.Provider value={{ color: "#A9B3C1", size: 64 }}>
       <LinksSection>
         <LinksWrapper>
